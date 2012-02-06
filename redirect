@@ -1,0 +1,30 @@
+#!/bin/bash
+
+do_start() {
+    node /home/dom/tree/redirect.js &
+}
+
+do_stop() {
+    for pid in `ps aux | grep node | grep redirect.js | awk '{print $2}'` ; do
+         kill -9 $pid 2> /dev/null ;
+    done;
+}
+
+case "$1" in
+    restart|reload)
+        do_stop
+        do_start
+    ;;
+    start)
+        do_start
+    ;;
+    stop)
+        do_stop
+    ;;
+    *)
+        echo "Script only started at boot for system configuration."
+    ;;
+esac
+
+exit 0
+
