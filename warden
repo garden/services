@@ -1,0 +1,30 @@
+#!/bin/bash
+
+do_start() {
+    while true ; do
+        if [ `service tree status` == "FAIL" ] ; then
+           service tree start
+        fi
+        sleep 5
+    done &
+}
+
+do_stop() {
+	killall warden
+}
+
+case "$1" in
+    start|restart|reload)
+        do_start
+    ;;
+    stop)
+        do_stop
+    ;;
+    *)
+        echo "Script only started at boot for system configuration."
+    ;;
+esac
+
+exit 0
+
+#not anymore...
