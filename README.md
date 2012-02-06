@@ -1,11 +1,11 @@
 # Tree Services
 
-Service scripts for managing a secure [file tree] (https://thefiletree.com) instance.
+Service scripts for managing a secure [file tree] (https://github.com/garden/tree) instance.
 
 ## Description
 
 - `redirect` This service redirects HTTP requests to HTTPS.
-- `tree` This service runs a secure [file tree] (https://thefiletree.com) server.
+- `tree` This service runs a secure [file tree] (https://github.com/garden/tree) server.
 - `warden` This script watches the `tree` service, and restarts it when needed.
 
 ## Installation
