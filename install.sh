@@ -16,8 +16,8 @@ sudo cp /home/dom/services/redirect /etc/init.d/
 
 cd /home/dom/tree
 openssl genrsa -aes256 -out https.key.tmp 1024
+openssl req -new -key https.key.tmp -out https.csr
 openssl rsa -in https.key.tmp -out https.key
-openssl req -new -key https.key -out https.csr
 openssl x509 -req -days 365 -in https.csr -signkey https.key -out https.crt
 rm https.key.tmp
 
