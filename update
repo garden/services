@@ -1,12 +1,12 @@
 #!/bin/bash
 
 do_start() {
-    node /home/dom/services/redirect.js >> /home/dom/services/redirect.log 2>&1
+    node /home/dom/services/update.js >> /home/dom/services/update.log 2>&1
 }
 
 do_stop() {
-    for pid in `ps aux | grep node | grep redirect.js | awk '{print $2}'` ; do
-         kill -9 $pid >> /home/dom/services/redirect.log 2>&1 ;
+    for pid in `ps aux | grep node | grep update.js | awk '{print $2}'` ; do
+         kill -9 $pid >> /home/dom/services/update.log 2>&1 ;
     done;
 }
 
@@ -27,4 +27,5 @@ case "$1" in
 esac
 
 exit 0
+
 
