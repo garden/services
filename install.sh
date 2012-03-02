@@ -8,11 +8,11 @@ git clone http://github.com/garden/services /home/dom/services
 # generate HTTPS credentials
 
 cd /home/dom/tree && \
-openssl genrsa -aes256 -out https.key.tmp 1024 && \
-openssl req -new -key https.key.tmp -out https.csr && \
-openssl rsa -in https.key.tmp -out https.key && \
+openssl genrsa -aes256 -out https.key 1024 && \
+openssl req -new -key https.key -out https.csr && \
 openssl x509 -req -days 365 -in https.csr -signkey https.key -out https.crt && \
-rm https.key.tmp
+openssl rsa -in https.key -out https.key.new && \
+mv https.key{.new,}
 
 # install service scripts
 
