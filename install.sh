@@ -2,8 +2,8 @@
 
 # clone repositories
 
-git clone http://github.com/garden/tree /home/dom/tree;
-git clone http://github.com/garden/services /home/dom/services;
+git clone http://github.com/garden/tree /home/dom/tree
+git clone http://github.com/garden/services /home/dom/services
 
 # generate HTTPS credentials
 
@@ -16,13 +16,13 @@ openssl rsa -in https.key.orig -out https.key
 
 # install service scripts
 
-sudo cp /home/dom/services/tree /etc/init.d/;
-sudo cp /home/dom/services/update /etc/init.d/;
-sudo cp /home/dom/services/warden /etc/init.d/;
-sudo cp /home/dom/services/redirect /etc/init.d/;
+sudo cp /home/dom/services/tree /etc/init.d/
+sudo cp /home/dom/services/update /etc/init.d/
+sudo cp /home/dom/services/warden /etc/init.d/
+sudo cp /home/dom/services/redirect /etc/init.d/
 
 # start all services
 
-sudo service redirect start;
-sudo service warden start;
-#sudo service update start;
+sudo service redirect start
+sudo service warden start
+sudo service update start
