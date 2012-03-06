@@ -13,7 +13,7 @@ Service scripts for managing a secure [file tree] (https://github.com/garden/tre
 
 - Make sure you have `node`, `git` and `curl`.
 - Create a user called `dom`.
-- `curl https://raw.github.com/garden/services/master/install.sh | sh`
+- `bash -c "$(curl https://raw.github.com/garden/services/master/install.sh)"`
 
 ## Usage
 
