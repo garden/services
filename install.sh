@@ -13,12 +13,6 @@ if which $$node > /dev/null;
   echo "Installation of Node done.";
 fi;
 
-if which $$curl > /dev/null;
-  then echo "curl is not installed. Installation of curl in progress.";
-  sudo apt-get install curl;
-  echo "Installation of curl done.";
-fi;
-
 if which $$openssl > /dev/null;
   then echo "openssl is not installed. Installation of openssl in progress.";
   sudo apt-get install openssl;
