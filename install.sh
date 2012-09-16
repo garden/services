@@ -22,7 +22,6 @@ fi;
 # clone repositories
 
 git clone http://github.com/garden/tree /home/dom/tree
-git clone http://github.com/garden/web /home/dom/tree/web
 git clone http://github.com/garden/services /home/dom/services
 
 # generate HTTPS credentials
