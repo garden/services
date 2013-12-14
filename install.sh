@@ -9,7 +9,7 @@ fi;
 
 if which $$node > /dev/null;
   then echo "Node is not installed. Installation of Node in progress.";
-  sudo apt-get install node;
+  sudo apt-get install nodejs;
   echo "Installation of Node done.";
 fi;
 
