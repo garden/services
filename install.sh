@@ -1,21 +1,43 @@
 #!/bin/bash
 
+# Package manager.
+if ! which apt-get > /dev/null;
+  then PM=ubuntu;
+elif ! which nix-env > /dev/null;
+  then PM=nix;
+fi
+
 # Make sure you have all we need
-if which $$git > /dev/null;
+if ! which git > /dev/null;
   then echo "Git is not installed. Installation of git in progress.";
-  sudo apt-get install git-core;
+  case $PM in
+    ubuntu)
+      sudo apt-get install git-core;;
+    nix)
+      sudo nix-env -i git;;
+  esac
   echo "Installation of git done.";
 fi;
 
-if which $$node > /dev/null;
+if ! which node > /dev/null;
   then echo "Node is not installed. Installation of Node in progress.";
-  sudo apt-get install nodejs;
+  case $PM in
+    ubuntu)
+      sudo apt-get install nodejs;;
+    nix)
+      sudo nix-env -i nodejs;;
+  esac
   echo "Installation of Node done.";
 fi;
 
-if which $$openssl > /dev/null;
+if ! which openssl > /dev/null;
   then echo "openssl is not installed. Installation of openssl in progress.";
-  sudo apt-get install openssl;
+  case $PM in
+    ubuntu)
+      sudo apt-get install openssl;;
+    nix)
+      sudo nix-env -i openssl;;
+  esac
   echo "Installation of openssl done.";
 fi;
 
