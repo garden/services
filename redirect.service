@@ -1,5 +1,5 @@
 [Unit]
-Description=Launch TheFileTree HTTP to https redirection server
+Description=TheFileTree HTTP to HTTPS redirection server
 
 [Service]
 ExecStart=/home/dom/services/redirect

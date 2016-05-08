@@ -1,5 +1,5 @@
 [Unit]
-Description=Launch TheFileTree server
+Description=TheFileTree server
 
 [Service]
 ExecStart=/home/dom/services/tree
