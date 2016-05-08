@@ -71,10 +71,10 @@ sudo cp /home/dom/services/tree.service /etc/systemd/system/
 sudo cp /home/dom/services/redirect.service /etc/systemd/system/
 sudo cp /home/dom/services/update.service /etc/systemd/system/
 
-systemctl daemon-reload
+sudo systemctl daemon-reload
 
 # start all services
 
-systemctl start tree.service
-systemctl start redirect.service
-systemctl start update.service
+sudo systemctl start tree.service
+sudo systemctl start redirect.service
+sudo systemctl start update.service
