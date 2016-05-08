@@ -1,0 +1,9 @@
+[Unit]
+Description=Launch TheFileTree server
+
+[Service]
+ExecStart=/home/dom/services/tree
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

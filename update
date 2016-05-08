@@ -1,31 +1,3 @@
 #!/bin/bash
 
-do_start() {
-    node /home/dom/services/update.js &
-}
-
-do_stop() {
-    for pid in `ps aux | grep node | grep update.js | awk '{print $2}'` ; do
-         kill -9 $pid >> /home/dom/services/update.log 2>&1 ;
-    done;
-}
-
-case "$1" in
-    restart|reload)
-        do_stop
-        do_start
-    ;;
-    start)
-        do_start
-    ;;
-    stop)
-        do_stop
-    ;;
-    *)
-        echo "Script only started at boot for system configuration."
-    ;;
-esac
-
-exit 0
-
-
+node /home/dom/services/update.js &

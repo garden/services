@@ -1,35 +1,4 @@
 #!/bin/bash
 
-do_start() {
-    cd /home/dom/tree && make SECURE=yes >> /home/dom/tree/service.log 2>&1
-}
-
-do_stop() {
-    cd /home/dom/tree && make stop
-}
-
-do_check() {
-    if [ -z "`ps aux | grep node | grep 443`" ] ; then echo "FAIL" ; else echo "OK" ; fi
-}
-
-case "$1" in
-    restart|reload)
-        do_stop
-        do_start
-    ;;
-    start)
-        do_start
-    ;;
-    stop)
-        do_stop
-    ;;
-    status)
-        do_check
-    ;;
-    *)
-        echo "Script only started at boot for system configuration."
-    ;;
-esac
-
-exit 0
-
+cd /home/dom/tree
+node ./app.js 443 yes >> tree.log 2>&1

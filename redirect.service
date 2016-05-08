@@ -1,0 +1,9 @@
+[Unit]
+Description=Launch TheFileTree HTTP to https redirection server
+
+[Service]
+ExecStart=/home/dom/services/redirect
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
